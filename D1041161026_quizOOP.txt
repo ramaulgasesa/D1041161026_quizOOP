@@ -1,0 +1,132 @@
+Nama :Rama Ulgasesa
+NIM  :D1041161026
+
+1. Modifier
+    
+    1) private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+
+       modifier : private
+
+
+    2) public static final String EXTRA_MESSAGE =
+            "com.example.android.twoactivities.extra.MESSAGE";
+
+       modifier : public
+
+
+    3) protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           setContentView(R.layout.activity_main);
+           mMessageEditText = findViewById(R.id.editText_main);
+       }
+
+      modifier : protected
+
+
+
+2. Method
+    1) onCreate()
+    2) launchSecondActivity()
+    3) setContentView()
+    4) getIntent()
+
+3. Class
+    1) public class SecondActivity extends AppCompatActivity {
+    2) public class MainActivity extends AppCompatActivity {
+
+
+4. Function
+    1) public void onClick(View v) {
+                mCount++;
+                textCount.setText(Integer.toString(mCount));
+       }
+
+
+    2) public void onClick(View v) {
+                mCount--;
+                textCount.setText(Integer.toString(mCount));
+       }
+
+    3) private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+
+5. Constructor
+    1) public class SecondActivity extends AppCompatActivity {
+         int mCount = 26;
+         TextView mShowCount;
+
+         @Override
+         protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_second);
+
+    2) public class MainActivity extends AppCompatActivity {
+    	    private static final String LOG_TAG =
+                MainActivity.class.getSimpleName();
+
+
+6. Polimorfisme
+   1) protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        final TextView textView = findViewById(R.id.text_header);
+        textView.setText(message);
+
+        final TextView textCount = findViewById(R.id.showCount);
+        textCount.setText(Integer.toString(mCount));
+
+        final Button buttonTambah = findViewById(R.id.btnTambah);
+        buttonTambah.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mCount++;
+                textCount.setText(Integer.toString(mCount));
+            }
+        });
+        final Button buttonKurang = findViewById(R.id.btnKurang);
+        buttonKurang.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mCount--;
+                textCount.setText(Integer.toString(mCount));
+            }
+        });
+
+    }
+    
+    2) public class Polimorphism {
+ 
+   		public static void main(String[ ] args) {
+ 
+      			cetakObyek(new Balok());
+      			cetakObyek(new PersegiPanjang());
+      			cetakObyek(new BangunDatar());
+      			cetakObyek(new Object());
+   		}
+    
+        	public static void cetakObyek(Object obyek) {
+      			System.out.println(obyek);
+   		}
+ 
+	}
+
+    3) 
+7. Inheritance
+    1) public class SecondActivity extends AppCompatActivity {
+    2) public class MainActivity extends AppCompatActivity { 
+    3) class Enemy {
+    		String name;
+    		int hp;
+    		int attackPoin;
+
+    			void attack(){
+        			System.out.println("Serang!");
+    			}
+	}
+
+        class Zombie extends Enemy {
+    		void walk(){
+        		System.out.println("Zombie jalan-jalan");
+    		}
+	}
